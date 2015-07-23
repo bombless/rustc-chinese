@@ -1,131 +1,73 @@
-# The Rust Programming Language
+# Rust 编程语言
 
-This is a compiler for Rust, including standard libraries, tools and
-documentation. Rust is a systems programming language that is fast,
-memory safe and multithreaded, but does not employ a garbage collector
-or otherwise impose significant runtime overhead.
+这里是一个使用中文输出错误的 Rust 编译器，
+包括标准库，工具，还有文档。
+Rust 是一个高效、内存安全、并行的系统编程语言，
+同时不使用一个垃圾收集器或其他强加的大的运行时负担。
 
-## Quick Start
+## 从源码编译
 
-Read ["Installing Rust"] from [The Book].
+1. 确保你已经安装了以下依赖：
 
-["Installing Rust"]: http://doc.rust-lang.org/book/installing-rust.html
-[The Book]: http://doc.rust-lang.org/book/index.html
-
-## Building from Source
-
-1. Make sure you have installed the dependencies:
-
-   * `g++` 4.7 or `clang++` 3.x
-   * `python` 2.6 or later (but not 3.x)
-   * GNU `make` 3.81 or later
+   * `g++` 4.7 或 `clang++` 3.x
+   * `python` 2.6 或更新 （但不能是 3.x）
+   * GNU `make` 3.81 或更新
    * `curl`
    * `git`
 
-2. Clone the [source] with `git`:
+2. 用 `git` 克隆 [源码]：
 
    ```sh
-   $ git clone https://github.com/rust-lang/rust.git
+   $ git clone https://github.com/bombless/rustc-chinese.git
    $ cd rust
    ```
 
-[source]: https://github.com/rust-lang/rust
+[源码]: https://github.com/bombless/rustc-chinese
 
-3. Build and install:
+3. 构建并安装：
 
     ```sh
     $ ./configure
     $ make && make install
     ```
 
-    > ***Note:*** You may need to use `sudo make install` if you do not
-    > normally have permission to modify the destination directory. The
-    > install locations can be adjusted by passing a `--prefix` argument
-    > to `configure`. Various other options are also supported – pass
-    > `--help` for more information on them.
+### 在 Windows 上构建
 
-    When complete, `make install` will place several programs into
-    `/usr/local/bin`: `rustc`, the Rust compiler, and `rustdoc`, the
-    API-documentation tool. This install does not include [Cargo],
-    Rust's package manager, which you may also want to build.
+可以用 [MSYS2](http://msys2.github.io/) 来轻松构建本项目：
 
-[Cargo]: https://github.com/rust-lang/cargo
+1. 拿到最新的 MSYS2 安装程序并安装。
 
-### Building on Windows
-
-[MSYS2](http://msys2.github.io/) can be used to easily build Rust on Windows:
-
-1. Grab the latest MSYS2 installer and go through the installer.
-
-2. From the MSYS2 terminal, install the `mingw64` toolchain and other required
-   tools.
+2. 从 MSYS2 控制台安装 `mingw64` 工具链及其他需要的工具。
 
    ```sh
-   # Choose one based on platform:
+   # 工具平台选一个
    $ pacman -S mingw-w64-i686-toolchain
    $ pacman -S mingw-w64-x86_64-toolchain
 
    $ pacman -S base-devel
    ```
 
-3. Run `mingw32_shell.bat` or `mingw64_shell.bat` from wherever you installed
-   MYSY2 (i.e. `C:\msys`), depending on whether you want 32-bit or 64-bit Rust.
+3. 根据你想要 32 位或 64 位 Rust 从 MSYS2 安装目录运行 `mingw32_shell.bat` 或
+`mingw64_shell.bat`。
 
-4. Navigate to Rust's source code, configure and build it:
+4. 转到源码路径，配置并构建
 
    ```sh
    $ ./configure
    $ make && make install
    ```
 
-## Notes
+## 获得帮助
 
-Since the Rust compiler is written in Rust, it must be built by a
-precompiled "snapshot" version of itself (made in an earlier state of
-development). As such, source builds require a connection to the Internet, to
-fetch snapshots, and an OS that can execute the available snapshot binaries.
+Rust 中文社区的人们在几个地方聚集：
 
-Snapshot binaries are currently built and tested on several platforms:
+* [rust.cc] - Rust 中文社区讨论论坛
+* [v2ex] - V2EX Rust 节点
+* [知乎] - 问答
 
-| Platform \ Architecture        | x86 | x86_64 |
-|--------------------------------|-----|--------|
-| Windows (7, 8, Server 2008 R2) | ✓   | ✓      |
-| Linux (2.6.18 or later)        | ✓   | ✓      |
-| OSX (10.7 Lion or later)       | ✓   | ✓      |
-
-You may find that other platforms work, but these are our officially
-supported build environments that are most likely to work.
-
-Rust currently needs about 1.5 GiB of RAM to build without swapping; if it hits
-swap, it will take a very long time to build.
-
-There is more advice about hacking on Rust in [CONTRIBUTING.md].
-
-[CONTRIBUTING.md]: https://github.com/rust-lang/rust/blob/master/CONTRIBUTING.md
-
-## Getting Help
-
-The Rust community congregates in a few places:
-
-* [Stack Overflow] - Direct questions about using the language.
-* [users.rust-lang.org] - General discussion and broader questions.
-* [/r/rust] - News and general discussion.
-
-[Stack Overflow]: http://stackoverflow.com/questions/tagged/rust
-[/r/rust]: http://reddit.com/r/rust
-[users.rust-lang.org]: http://users.rust-lang.org/
-
-## Contributing
-
-To contribute to Rust, please see [CONTRIBUTING](CONTRIBUTING.md).
-
-Rust has an [IRC] culture and most real-time collaboration happens in a
-variety of channels on Mozilla's IRC network, irc.mozilla.org. The
-most popular channel is [#rust], a venue for general discussion about
-Rust, and a good place to ask for help.
-
-[IRC]: https://en.wikipedia.org/wiki/Internet_Relay_Chat
-[#rust]: irc://irc.mozilla.org/rust
+[rust.cc]: http://rust.cc/
+[v2ex]: http://v2ex.com/go/rustlang
+[知乎]: http://www.zhihu.com/topic/19674381
 
 ## License
 
